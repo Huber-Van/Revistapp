@@ -13,7 +13,7 @@ Route::get('/articulos1', function () {
 
 Route::get('/articulos/{id}', function ($id) {
     $frase="Gracias por leer el articulo con id: ". $id;
-    return $frase;
+    return view('articulos.show', ['id'=>$id]);
 })->name('articulos.show');
 
 //el codigo php se realiza en las rutas o el controlador
