@@ -3,14 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticuloController;
 
-Route::get('/articulos1', function () {
+/*Route::get('/articulos', function () {
     $articulos=[
         ["id" => 1, "titulo" => "Primer artículo..."],
         ["id" => 2, "titulo" => "Segundo artículo..."],
         ["id" => 3, "titulo" => "Tercer artículo..."],
     ];
     return view('articulos.index',['articulos'=>$articulos]);
-})->name('articulos.index');
+})->name('articulos.index');*/
 
 /*Route::get('/articulos/{id}', function ($id) {
     $frase="Gracias por leer el articulo con id: ". $id;
@@ -21,16 +21,16 @@ Route::get('/articulos1', function () {
 //el codigo php se realiza en las rutas o el controlador
 //el llamado se hace en views 
 
-Route::get('/articulos', function () {
+/*Route::get('/articulos', function () {
     $articulos = ['Primero', 'Segundo','Tercero', 'Último'];
     return view('articulos' , [
         'nombre' => 'Ane Aranceta',
         'articulos' => $articulos
     ]);
 })->name('articulos');
-
+*/
 //LLAMANDO A LOS CONTROLLERS
-//Route::get('articulos/', [ArticuloController::class, 'index'])->name('articulos.index');
+Route::get('articulos', [ArticuloController::class, 'index'])->name('articulos.index');
 Route::get('articulos/{id}', [ArticuloController::class, 'show'])->name('articulos.show');
 //Route::get('articulos/create', [ArticuloController::class, 'create'])->name('articulos.create');
 //Route::post('articulos/', [ArticuloController::class, 'store'])->name('articulos.store');
